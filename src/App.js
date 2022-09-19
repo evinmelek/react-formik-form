@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import {ThemeProvider} from "./context/ThemeContext";  
+import Container from "./components/Container";
 
-function App() {
+function App() { 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> 
+      <ThemeProvider> 
+        <Container>
+        <div className="App" id="#app">  
+        <img src='https://avatars.mds.yandex.net/i?id=73a8d63dca783e0ed7101a886835b472-4142142-images-thumbs&n=13'/>
+        <div className="signin">
+        <SignIn>SignIn</SignIn>
+        </div> 
+        <div className="signup">
+          <p>If You Are Not A User</p>
+        <SignUp>SignUp</SignUp>
+        </div>
+        </div> 
+        </Container>
+      </ThemeProvider>
     </div>
   );
 }
